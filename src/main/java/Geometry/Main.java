@@ -15,6 +15,5 @@ public class Main {
         System.out.println("Aria triunghiului este:" + Double.toString(T.getArea()));
         System.out.println("Aria dreptunghiului este:" + Double.toString(R.getArea()));
         System.out.println("Aria patratului este:" + Double.toString(S.getArea()));
-
     }
 }
