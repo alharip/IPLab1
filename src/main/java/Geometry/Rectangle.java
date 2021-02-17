@@ -1,52 +1,37 @@
 package Geometry;
 
-class Rectangle implements Shape {
-    protected double area;
-    protected double height;
-    protected double width;
+class Rectangle extends Parallelogram {
 
     Rectangle() {
         System.out.println("A Rectangle was created");
         area = 0;
         height = 0;
-        width = 0;
+        LG = l = 0;
     }
 
     Rectangle(double height, double width){
             System.out.println("A Rectangle was created");
             this.height = height;
-            this.width = width;
+            this.LG = width;
+            this.l = height;
             onAreaChange();
     }
 
     @Override
     public void onAreaChange() {
-        area = height * width;
+        area = LG * l;
     }
 
     @Override
-    public double Perimeter() {
-        return 2 * (height + width);
+    public void setLG(double LG) {
+        super.setLG(LG);
     }
-
     @Override
-    public double getArea() {
-        return area;
+    public void setl(double l) {
+        super.setl(l);
     }
-
+    @Override
     public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public double getWidth() {
-        return width;
+        super.setl(height);
     }
 }
