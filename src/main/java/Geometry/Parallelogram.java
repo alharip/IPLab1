@@ -1,16 +1,19 @@
 package Geometry;
 
-public class Parallelogram implements Shape{
-    protected double LG;
-    protected double l;
-    protected double height;
-    protected double area;
+abstract class Parallelogram implements Shape{ //inheritance from class Shape
 
-    Parallelogram(){
+    protected double LG; // variable used for calculation
+    protected double l;// variable used for calculation
+    protected double height; // variable used for calculation
+    protected double area; //variable which stores the area
+
+    Parallelogram(){ //constructor
         System.out.println("A Parallelogram was created");
         LG = l = height = area =0;
     }
-    Parallelogram(double L, double l, double height)
+
+    //static polymorphism
+    Parallelogram(double L, double l, double height) //constructor
     {
         System.out.println("A Parallelogram was created");
         this.LG = L;
@@ -18,35 +21,40 @@ public class Parallelogram implements Shape{
         this.height = height;
         onAreaChange();
     }
-    @Override
-    public void onAreaChange() {
-        area = height * LG;
-    }
+
+
+    //dynamic polymorphism
     @Override
     public double Perimeter() {
         return 2*(LG + l);
     }
+
+    //dynamic polymorphism
     @Override
     public double getArea() {
         return area;
     }
 
+    //setter
     public void setLG(double LG) {
         this.LG = LG;
     }
-    public void setl(double l) {
-        LG = l;
-    }
-
+    //setter
+    public void setl(double l) {this.l = l; }
+    //setter
     public void setHeight(double height) {
         this.height = height;
     }
+
+    //getter
     public double getLG() {
         return LG;
     }
+    //getter
     public double getHeight() {
         return height;
     }
+    //getter
     public double getL() {
         return l;
     }
